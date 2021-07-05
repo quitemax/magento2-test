@@ -27,7 +27,7 @@ class MassDelete extends Action implements HttpPostActionInterface
     /**
      * Authorization level of a basic admin session
      */
-    const ADMIN_RESOURCE = 'Fwc_Forecast::certificate_delete';
+    const ADMIN_RESOURCE = 'Sohi_Test::forecast_delete';
 
     /**
      * @var Filter

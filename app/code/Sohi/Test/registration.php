@@ -1,7 +1,7 @@
 <?php
 /**
- * Copyright © FastWhiteCat. All rights reserved.
- * See LICENSE_FASTWHITECAT.txt for license details.
+ * Copyright © Sohi. All rights reserved.
+ * See LICENSE_SOHI.txt for license details.
  */
 
 use Magento\Framework\Component\ComponentRegistrar;
