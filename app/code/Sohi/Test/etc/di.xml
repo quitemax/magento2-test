@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Sohi\Test\Api\Data\ForecastInterface" type="Sohi\Test\Model\Forecast"/>
+    <preference for="Sohi\Test\Api\ForecastRepositoryInterface" type="Sohi\Test\Model\ForecastRepository"/>
+    <preference for="Sohi\Test\Api\Data\ForecastSearchResultsInterface" type="Sohi\Test\Model\ForecastSearchResults"/>
+
+    <type name="Sohi\Test\Logger\Logger">
+        <arguments>
+            <argument name="name" xsi:type="string">SohiTestLogger</argument>
+            <argument name="handlers" xsi:type="array">
+                <item name="debug" xsi:type="object">Sohi\Test\Logger\Handler</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <virtualType name="SohiTestForecastGridCollection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">sohi_test_forecast</argument>
+            <argument name="resourceModel" xsi:type="string">Sohi\Test\Model\ResourceModel\Forecast</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="sohi_test_forecast_grid_data_source" xsi:type="string">SohiTestForecastGridCollection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Sohi\Test\Console\Command\GetForecastFromApi">
+        <arguments>
+            <!-- configure the command name via constructor $name argument -->
+            <argument name="name" xsi:type="string">sohi_test:forecast:get-from-api</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\Console\CommandListInterface">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="sohi_test_forecast_get_from_api" xsi:type="object">Sohi\Test\Console\Command\GetForecastFromApi</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

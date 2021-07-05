@@ -1,0 +1,22 @@
+{
+    "sohi_test_forecast": {
+        "column": {
+            "forecast_id": true,
+            "name": true,
+            "description": true,
+            "temp": true,
+            "temp_feel": true,
+            "pressure": true,
+            "humidity": true,
+            "visibility": true,
+            "wind_spd": true,
+            "wind_deg": true,
+            "clouds": true,
+            "creation_time": true,
+            "update_time": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

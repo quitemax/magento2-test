@@ -1,0 +1,19 @@
+{
+    "name": "sohi/module-test",
+    "description": "Monogo Interview Test Module",
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": "proprietary",
+    "minimum-stability": "dev",
+    "require": {
+        "magento/framework": "103.0.*",
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Sohi\\Test\\": ""
+        }
+    }
+}

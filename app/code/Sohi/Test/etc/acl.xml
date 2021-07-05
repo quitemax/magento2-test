@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Sohi_Test::content">
+                    <resource id="Sohi_Test::content_dedicated">
+                        <resource id="Sohi_Test::forecasts_management" sortOrder="10" title="Forecasts management">
+                            <resource id="Sohi_Test::forecast_delete" sortOrder="10" title="Delete forecast"/>
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

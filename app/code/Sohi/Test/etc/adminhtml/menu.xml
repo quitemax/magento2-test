@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Sohi_Test::content"
+             title="Test"
+             module="Sohi_Test"
+             sortOrder="11"
+             resource="Sohi_Test::content"
+        />
+        <add id="Sohi_Test::content_dedicated"
+             title="Forecasts Section"
+             translate="title"
+             module="Sohi_Test"
+             sortOrder="100"
+             parent="Sohi_Test::content"
+             resource="Sohi_Test::content_dedicated"
+        />
+        <add id="Sohi_Test::forecasts"
+             title="Forecasts"
+             translate="title"
+             module="Sohi_Test"
+             sortOrder="110"
+             parent="Sohi_Test::content_dedicated"
+             action="sohi_test/forecast"
+             resource="Sohi_Test::forecasts_management"
+        />
+    </menu>
+</config>

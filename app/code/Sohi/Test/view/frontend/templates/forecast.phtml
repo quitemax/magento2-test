@@ -1,0 +1,49 @@
+<?php
+/**
+ * Copyright © Sohi. All rights reserved.
+ * See LICENSE_SOHI.txt for license details.
+ */
+// @codingStandardsIgnoreFile
+/** @var \Sohi\Test\ViewModel\Forecast $viewModel */
+$viewModel = $block->getViewModel();
+$forecast = $viewModel->getForecast();
+if (!$forecast) return;
+?>
+<h1 class="page-title">
+    <span class="base" data-ui-id="page-title-wrapper"><?= $block->escapeHtml(__($viewModel->getTitle())) ?></span>
+</h1>
+<div class="forecast-header">
+    <div class="label-wrapper">
+        <span class="label"><?= $block->escapeHtml(__('Date')) ?>: </span><span class="text"><?= $block->formatDate($forecast->getCreationTime(), \IntlDateFormatter::LONG) ?></span>
+    </div>
+    <div class="label-wrapper">
+        <span class="label"><?= $block->escapeHtml(__('Title')) ?>: </span><span class="text"><?= $forecast->getTitle() ?></span>
+    </div>
+    <div class="label-wrapper">
+        <span class="label"><?= $block->escapeHtml(__('Description')) ?>: </span><span class="text"><?= $forecast->getDescription() ?></span>
+    </div>
+    <div class="label-wrapper">
+        <span class="label"><?= $block->escapeHtml(__('Temperature')) ?>: </span><span class="text"><?= $forecast->getTemperature() ?> K</span>
+    </div>
+    <div class="label-wrapper">
+        <span class="label"><?= $block->escapeHtml(__('Feels Like Temperature')) ?>: </span><span class="text"><?= $forecast->getFeelsLikeTemperature() ?> K</span>
+    </div>
+    <div class="label-wrapper">
+        <span class="label"><?= $block->escapeHtml(__('Pressure')) ?>: </span><span class="text"><?= $forecast->getPressure() ?> hPa</span>
+    </div>
+    <div class="label-wrapper">
+        <span class="label"><?= $block->escapeHtml(__('Humidity')) ?>: </span><span class="text"><?= $forecast->getHumidity() ?> %</span>
+    </div>
+    <div class="label-wrapper">
+        <span class="label"><?= $block->escapeHtml(__('Visibility')) ?>: </span><span class="text"><?= $forecast->getVisibility() ?> m</span>
+    </div>
+    <div class="label-wrapper">
+        <span class="label"><?= $block->escapeHtml(__('Wind Speed')) ?>: </span><span class="text"><?= $forecast->getWindSpeed() ?> kph</span>
+    </div>
+    <div class="label-wrapper">
+        <span class="label"><?= $block->escapeHtml(__('Wind Direction')) ?>: </span><span class="text"><?= $forecast->getWindDirection() ?> deg</span>
+    </div>
+    <div class="label-wrapper">
+        <span class="label"><?= $block->escapeHtml(__('Cloud Cover')) ?>: </span><span class="text"><?= $forecast->getCloudCover() ?> %</span>
+    </div>
+</div>
